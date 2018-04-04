@@ -43,7 +43,7 @@ $ python -m textblob.download_corpora
 $ pip install -e .
 ```
 
-Now you can run the tool with the command `wikitrivia`.
+Now you can run the tool with the command `quesgen`.
 
 Advanced usage
 --------------
@@ -55,7 +55,7 @@ By default, the tool will scrape the hard-coded sample articles listed in the `-
 You can point the tool to a specific Wikipedia page by specifying its title:
 
 ```bash
-$ wikitrivia 'William Shatner'
+$ quesgen 'William Shatner'
 ```
 
 **Be sure to include multi-word titles in quotes, or the tool will treat each word as a separate title.**
@@ -65,7 +65,7 @@ $ wikitrivia 'William Shatner'
 You can scrape multiple articles at once by providing multiple titles:
 
 ```bash
-$ wikitrivia 'Leonard Nimoy' 'George Takei' 'Nichelle Nichols'
+$ quesgen 'Leonard Nimoy' 'George Takei' 'Nichelle Nichols'
 ```
 
 ### Outputting to JSON
@@ -73,7 +73,7 @@ $ wikitrivia 'Leonard Nimoy' 'George Takei' 'Nichelle Nichols'
 If you want to take this data elsewhere, you can output the results to a JSON file:
 
 ```bash
-$ wikitrivia --output scotty.json 'James Doohan'
+$ quesgen --output scotty.json 'James Doohan'
 ```
 
 Methodology
@@ -95,4 +95,3 @@ My approach is to find the hypernym of the answer, and then select other hyponym
 
 In the example in the "Sample usage" section, the correct answer is **painter**. The hypernym of painter is **artist**. The hyponyms I found for **artist** appear in the `similar_words` array in the output: "classic", "classicist", "constructivist", "decorator", "draftsman", "etcher", "expressionist", "illustrator".
 
-Clearly there's still much room for improvement in all respsects of the methodology, but overall I was impressed with how far I could get with [TextBlob](http://textblob.readthedocs.org/en/dev/), [NLTK](http://www.nltk.org/), and an introductory understanding of NLP.
