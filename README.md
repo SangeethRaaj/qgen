@@ -1,17 +1,13 @@
 question-generator
 ============================
 
-**This project is no longer maintained. It is MIT licensed, so you're welcome to take the code and use it yourself.**
-
-Uses Natural Language Processing and Wikipedia content to try to generate Mad Libs-style game questions. Powers the web app at http://wikitrivia.atbaker.me.
-
 Sample usage
 ------------
 
 Running the command:
 
 ```bash
-$ wikitrivia '<search phrase'
+$ quesgen '<search phrase>'
 ```
 
 yields:
@@ -42,15 +38,8 @@ You can use the project locally (and quickly) through [Docker](https://www.docke
 Clone the repo, and then use pyvenv-3.4 (or virtualenv) to create a new virtual environment. Then, install the requirements and the NLTK corpora:
 
 ```bash
-$ pyvenv venv
-$ source venv/bin/activate
 $ pip install -r requirements.txt
 $ python -m textblob.download_corpora
-```
-
-Install the command line tool so you can use the tool easily:
-
-```bash
 $ pip install -e .
 ```
 
@@ -87,12 +76,8 @@ If you want to take this data elsewhere, you can output the results to a JSON fi
 $ wikitrivia --output scotty.json 'James Doohan'
 ```
 
-**If you're using `docker run`, by default this will save `scotty.json` inside the container.** Either mount the current directory with the `-v` option or just use fig instead, which mounts the directory as a volume automatically.
-
 Methodology
 -----------
-
-Though I tried a few different approaches when developing this tool, in the end I had the most success with a rather simple methodology.
 
 ### Finding the right ___________'s
 
