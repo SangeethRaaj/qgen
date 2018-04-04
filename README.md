@@ -30,8 +30,6 @@ Quickstart
 
 question-generator is a Python 3 project that uses the fantastic [click](http://click.pocoo.org/3/) package to expose itself as a shell command.
 
-You can use the project locally (and quickly) through [Docker](https://www.docker.com/) or a local installation of Python 3.4.
-
 
 ### Installing with Python 3.4
 
